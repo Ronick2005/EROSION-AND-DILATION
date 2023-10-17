@@ -18,58 +18,42 @@ Apply erosion and dilation using cv2.erode and cv2.dilate.
 Plot the images using plt.imshow.
 
 ## Program:
-# Import the necessary packages
+### Import the necessary packages
 ``` python
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 ```
-# Create the Text using cv2.putText
+### Create the Text using cv2.putText
 ``` python
-text_image = np.zeros((100,600),dtype = 'uint8')
+text_image = np.zeros((100,550), dtype = 'uint8')
 font = cv2.FONT_HERSHEY_SIMPLEX 
-cv2.putText(text_image,"Ronick Aakshath",(5,70),font,2,(255),5,cv2.LINE_AA)
-cv2.imshow("Ronick's Output",text_image)
+cv2.putText(text_image, "Ronick Aakshath", (5,70), font, 2, (255), 5, cv2.LINE_AA)
+plt.imshow(text_image)
 ```
-# Create the structuring element
+### Create the structuring element
 ``` python
-kernel=cv2.getStructuringElement(cv2.MORPH_CROSS,(7,7))
+kernel=cv2.getStructuringElement(cv2.MORPH_CROSS, (7,7))
 ```
-# Erode the image
+### Erode the image
 ``` python
-image_erode = cv2.erode(text_image,kernel)
-cv2.imshow("Erode image",image_erode)
+image_erode = cv2.erode(text_image, kernel)
+plt.imshow(image_erode)
 ```
-# Dilate the image
+### Dilate the image
 ``` python
-dilationImage=cv2.dilate(text_image,kernel)
-cv2.imshow("Dilated Image",dilationImage)
+dilationImage=cv2.dilate(text_image, kernel)
+plt.imshow(dilationImage)
 ```
 ## Output:
-
 ### Display the input Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+![image](https://github.com/Ronick2005/EROSION-AND-DILATION/assets/83219341/c32a65e6-1ec3-47a1-93d8-a1911f82840a)
 
 ### Display the Eroded Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+![image](https://github.com/Ronick2005/EROSION-AND-DILATION/assets/83219341/ba297106-951e-4820-a154-dbe9baeb1d4a)
 
 ### Display the Dilated Image
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+![image](https://github.com/Ronick2005/EROSION-AND-DILATION/assets/83219341/a96ebbfb-27db-4c46-96be-db5ef6c5b697)
 
 ## Result
-Thus the generated text image is eroded and dilated using python and OpenCV.
+Thus the generated text image is eroded and dilated using Python and OpenCV.
